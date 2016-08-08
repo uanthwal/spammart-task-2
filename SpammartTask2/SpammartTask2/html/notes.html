@@ -1,0 +1,62 @@
+﻿<div ng-controller="notesController">
+    <div>
+        <div class="new-note" ng-show="new_note_half_div">
+            <input type="text" class="new-note-input" name="new-note-input" ng-focus="displayFullNoteForm()" placeholder="Take a note....">
+        </div>
+        <div ng-show="!new_note_full_div" class="new-note new-note-full">
+            <input type="text" id="new-note-title" class="new-note-f-title" placeholder="Title">
+            <textarea id="new-note-body" class="new-note-f-body" placeholder="Take a note...."></textarea>
+            <div class="action-items-container">
+                <img class="action-item-icon" src="/images/reminder_black.png" />
+                <img class="action-item-icon" src="/images/add_label_black.png" />
+                <img class="action-item-icon" src="/images/note_color_black.png" />
+                <img class="action-item-icon" src="/images/share_black.png" />
+                <img class="action-item-icon" src="/images/more_black.png" />
+                <div class="add-note-txt">DONE</div>
+            </div>
+        </div>
+    </div>
+    <div class="notes-container-main" ng-repeat="note in notesList">
+        <div class="note" id="{{note.id}}" draggable>
+            <div class="note-title">{{note.name}}</div>
+            <div class="note-body">{{note.body}}</div>
+            <div class="action-items-container-note">
+                <div class="action-item-icon-tray">
+                    <img class="action-item-icon" id="reminder-id-{{note.id}}" src="/images/reminder_black.png">
+                    <img class="action-item-icon" id="label-id-{{note.id}}" src="/images/add_label_black.png">
+                    <img class="action-item-icon" id="note-color-id-{{note.id}}" src="/images/note_color_black.png">
+                    <img class="action-item-icon" id="share-id-{{note.id}}" src="/images/share_black.png">
+                    <div class="del-note" id="del-id-{{note.id}}" ng-click="deleteNote($event)">
+                        <img class="action-item-icon" src="/images/delete_black.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+<script>
+    $(function () {
+        $('#new-note-body').on('keyup paste', function () {
+            var $el = $(this),
+                offset = $el.innerHeight() - $el.height();
+
+            if ($el.innerHeight < this.scrollHeight) {
+                //Grow the field if scroll height is smaller
+                $el.height(this.scrollHeight - offset);
+            } else {
+                //Shrink the field and then re-set it to the scroll height in case it needs to shrink
+                $el.height(1);
+                $el.height(this.scrollHeight - offset);
+            }
+        });
+        function setHeight() {
+            windowHeight = $(window).innerHeight();
+            $('.vertical-separator').css('min-height', windowHeight);
+        };
+        setHeight();
+
+        $(window).resize(function () {
+            setHeight();
+        });
+    });
+</script>

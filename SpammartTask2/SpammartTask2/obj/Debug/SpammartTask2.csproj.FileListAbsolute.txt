@@ -1,0 +1,6 @@
+C:\Users\UPENDRA\documents\visual studio 2013\Projects\SpammartTask2\SpammartTask2\bin\SpammartTask2.dll.config
+C:\Users\UPENDRA\documents\visual studio 2013\Projects\SpammartTask2\SpammartTask2\bin\SpammartTask2.dll
+C:\Users\UPENDRA\documents\visual studio 2013\Projects\SpammartTask2\SpammartTask2\bin\SpammartTask2.pdb
+C:\Users\UPENDRA\documents\visual studio 2013\Projects\SpammartTask2\SpammartTask2\obj\Debug\SpammartTask2.dll
+C:\Users\UPENDRA\documents\visual studio 2013\Projects\SpammartTask2\SpammartTask2\obj\Debug\SpammartTask2.pdb
+C:\Users\UPENDRA\documents\visual studio 2013\Projects\SpammartTask2\SpammartTask2\obj\Debug\SpammartTask2.csprojResolveAssemblyReference.cache
